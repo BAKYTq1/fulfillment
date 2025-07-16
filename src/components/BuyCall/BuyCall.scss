@@ -1,0 +1,82 @@
+@import '../../styles/index.scss';
+.buycall{
+    background-color: #020C1E;
+    height: 302px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 60px;
+    div{
+        width: 50%;
+        height: 50px;
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+        @media(max-width: $breakpoint-lg) {
+             width: 60%;
+        }
+        @media(max-width: $breakpoint-md) {
+             width: 50%;
+             height: auto;
+            flex-direction: column;
+        }
+        @media(max-width: $breakpoint-sm) {
+             width: 80%;
+        }
+        button:first-child{
+            width: 44%;
+            padding: 0px 40px;
+            font-size: 16px;
+            font-weight: 500;
+            height: 100%;
+            color: black;
+            border-radius: 25px;
+            background-color: #FFDB00;
+            &:hover{
+                background-color: #ffdd00e9;
+                transition: all 0.2s ease;
+            }
+            @media(max-width: $breakpoint-lg ){
+                  font-size: 15px;
+            }
+            @media(max-width: $breakpoint-md ){
+                  width: 100%;
+                  height: 50px;
+            }
+        }
+        button:last-child{
+            width: 55%;
+            padding: 15px 40px;
+            font-size: 16px;
+            font-weight: 500;
+            color: white;
+              border-radius: 25px;
+            background-color: transparent;
+            border: 1px solid white;
+            &:hover{
+                border: 1px solid #FFDB00 ;
+                transition: all 0.2s ease;
+            }
+             @media(max-width: $breakpoint-lg ){
+                  font-size: 15px;
+            }
+             @media(max-width: $breakpoint-md ){
+                  width: 100%;
+                    height: 50px;
+            }
+        }
+    }
+    p{
+        font-size: 16px;
+        font-weight: 600;
+        color: white;
+        cursor: pointer;
+        text-align: center;
+        &:hover{
+            color: #FFDB00;
+        }
+    }
+}
