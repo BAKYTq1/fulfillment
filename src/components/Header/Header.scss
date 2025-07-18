@@ -1,0 +1,544 @@
+/* ==========  ПЕРЕМЕННЫЕ  ========== */
+$yellow: #ffd800;
+$yellow-hover: #e6c700;
+$dark: #0a0a0a;
+$gray: #666;
+$radius: 12px;
+$transition: 0.25s ease;
+
+/* ==========  БАЗОВЫЙ ХЕДЕР  ========== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 88px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  z-index: 1000;
+  font-family: "Montserrat", Arial, sans-serif;
+  transition: background-color $transition, box-shadow $transition;
+
+  &.scrolled {
+    background: rgba(10, 10, 10, 0.98);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+
+    .nav-link {
+      color: #fff;
+
+      &:hover {
+        color: $yellow;
+      }
+    }
+
+    .dropdown-icon {
+      color: #fff;
+    }
+
+    .social-icon {
+      color: #fff;
+
+      &:hover {
+        color: $yellow;
+      }
+    }
+
+    .login-btn {
+      border-color: #fff;
+      color: #fff;
+
+      &:hover {
+        background: #fff;
+        color: $dark;
+      }
+    }
+
+    .burger svg {
+      color: #fff;
+
+      &:hover {
+        color: $yellow;
+      }
+    }
+
+    .logo-placeholder {
+      background: $yellow;
+      color: $dark;
+    }
+
+    .register-btn {
+      background: $yellow;
+      color: $dark;
+
+      &:hover {
+        background: $yellow-hover;
+      }
+    }
+  }
+}
+
+.header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ---------- ЛЕВАЯ ЧАСТЬ ---------- */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex: 1;
+  min-width: 0; /* Важно для правильной работы ellipsis */
+}
+
+.logo {
+  flex-shrink: 0;
+}
+
+.logo-placeholder {
+  width: 56px;
+  height: 56px;
+  background: $yellow;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: $dark;
+}
+
+/* ---------- ГЛАВНОЕ МЕНЮ ---------- */
+.main-nav {
+  flex: 1;
+  min-width: 0;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    color: $dark;
+    text-decoration: none;
+    padding: 8px 0;
+    transition: color $transition;
+    position: relative;
+    min-width: 0;
+
+    &:hover {
+      color: $yellow-hover;
+    }
+  }
+
+  .nav-text {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 180px;
+  }
+}
+
+/* ---------- ВЫПАДАЮЩЕЕ МЕНЮ ---------- */
+.services-dropdown {
+  position: relative;
+
+  .dropdown-icon {
+    width: 16px;
+    height: 16px;
+    transition: transform $transition;
+    flex-shrink: 0;
+  }
+
+  &.open .dropdown-icon {
+    transform: rotate(180deg);
+  }
+}
+
+.dropdown-menu {
+min-width: 360px;
+display: flex;
+flex-direction: column;
+height: 250px;
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  border-radius: 30px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity $transition, visibility $transition, transform $transition;
+  z-index: 999;
+  text-align: left;
+
+  .services-dropdown.open & {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  li {
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: $dark;
+    text-decoration: none;
+    transition: background $transition, color $transition;
+
+    &:hover {
+      background: rgba($yellow, 0.1);
+      color: $yellow-hover;
+    }
+  }
+
+  .dropdown-text {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+   
+  }
+}
+
+/* ---------- ПРАВАЯ ЧАСТЬ ---------- */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-shrink: 0;
+}
+
+.social-icons {
+  display: flex;
+  gap: 14px;
+
+  .social-icon {
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    transition: transform $transition, color $transition;
+    color: $dark;
+
+    &:hover {
+      transform: scale(1.1);
+      color: $yellow-hover;
+    }
+  }
+}
+
+/* ---------- КНОПКИ ---------- */
+.auth-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.register-btn {
+  border: none;
+  border-radius: 50px;
+  background: $yellow;
+  color: $dark;
+  padding: 12px 32px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background $transition;
+  white-space: nowrap;
+
+  &:hover {
+    background: $yellow-hover;
+  }
+}
+
+.login-btn {
+  border: 2px solid $dark;
+  background: transparent;
+  color: $dark;
+  border-radius: 50px;
+  padding: 10px 28px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background $transition, color $transition;
+  white-space: nowrap;
+
+  &:hover {
+    background: $dark;
+    color: #fff;
+  }
+}
+
+/* ---------- BURGER MENU ---------- */
+.burger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1100;
+  position: relative;
+  
+  svg {
+    color: $dark;
+    transition: color $transition;
+  }
+
+  &:hover svg {
+    color: $yellow-hover;
+  }
+}
+
+/* ---------- MOBILE ACTIONS ---------- */
+.mobile-actions {
+  display: none;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 0;
+  border-top: 1px solid #eee;
+  margin-top: 20px;
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .auth-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+/* ---------- АДАПТИВНЫЕ СТИЛИ ---------- */
+
+/* Большие экраны (1400px+) */
+@media (min-width: 1400px) {
+  .header-container {
+    padding: 0 60px;
+  }
+
+  .nav-text {
+    max-width: 220px;
+  }
+
+  .dropdown-text {
+    max-width: 320px;
+  }
+}
+
+/* Средние десктопы (1200px - 1399px) */
+@media (max-width: 1399px) and (min-width: 1200px) {
+  .nav-text {
+    max-width: 180px;
+  }
+
+  .dropdown-text {
+    max-width: 280px;
+  }
+}
+
+/* Малые десктопы (1024px - 1199px) */
+@media (max-width: 1199px) and (min-width: 1024px) {
+  .header-container {
+    padding: 0 30px;
+  }
+
+  .header-left {
+    gap: 30px;
+  }
+
+  .main-nav ul {
+    gap: 24px;
+  }
+
+  .nav-text {
+    max-width: 140px;
+  }
+
+  .dropdown-menu {
+    min-width: 320px;
+  }
+
+  .dropdown-text {
+    max-width: 260px;
+  }
+}
+
+/* Планшеты (769px - 1023px) */
+@media (max-width: 1023px) and (min-width: 769px) {
+  .header-container {
+    padding: 0 25px;
+  }
+
+  .header-left {
+    gap: 25px;
+  }
+
+  .main-nav ul {
+    gap: 20px;
+  }
+
+  .nav-text {
+    max-width: 100px;
+  }
+
+  .dropdown-menu {
+    min-width: 280px;
+  }
+
+  .dropdown-text {
+    max-width: 220px;
+  }
+
+  .header-right {
+    gap: 20px;
+  }
+
+  .auth-buttons {
+    gap: 12px;
+  }
+
+  .register-btn,
+  .login-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+/* Мобильные устройства (768px и меньше) */
+@media (max-width: 768px) {
+  .header-container {
+    padding: 0 20px;
+  }
+
+  .header-left {
+    gap: 20px;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .main-nav {
+    position: fixed;
+    top: 88px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-100vh);
+    transition: transform $transition;
+    opacity: 0;
+    visibility: hidden;
+    height: calc(100vh - 88px);
+    overflow-y: auto;
+
+    &.active {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    ul {
+      flex-direction: column;
+      gap: 0;
+      align-items: stretch;
+    }
+
+    li {
+      border-bottom: 1px solid #eee;
+      
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    .nav-link {
+      padding: 16px 0;
+      font-size: 18px;
+      justify-content: space-between;
+    }
+
+    .nav-text {
+      max-width: none;
+      overflow: visible;
+      text-overflow: initial;
+      white-space: normal;
+    }
+  }
+
+  .services-dropdown {
+    .dropdown-menu {
+      position: static;
+      transform: none;
+      min-width: auto;
+      box-shadow: none;
+      border-radius: 0;
+      padding: 0;
+      margin-left: 20px;
+      background: #f8f9fa;
+      
+      a {
+        padding: 12px 16px;
+        font-size: 16px;
+        
+        &:hover {
+          background: rgba($yellow, 0.15);
+        }
+      }
+
+      .dropdown-text {
+        max-width: none;
+        overflow: visible;
+        text-overflow: initial;
+        white-space: normal;
+      }
+    }
+  }
+
+  .header-right {
+    display: none;
+  }
+
+  .mobile-actions {
+    display: flex;
+  }
+
+  .desktop-only {
+    display: none !important;
+  }
+}
+
+/* Очень маленькие экраны (480px и меньше) */
+@media (max-width: 480px) {
+  .header-container {
+    padding: 0 15px;
+  }
+
+  .logo-placeholder {
+    width: 48px;
+    height: 48px;
+    font-size: 18px;
+  }
+}
