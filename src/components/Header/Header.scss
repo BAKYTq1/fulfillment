@@ -79,7 +79,7 @@ $transition: 0.25s ease;
 }
 
 .header-container {
-  max-width: 1400px;
+  max-width: 1500px;
   margin: 0 auto;
   padding: 0 40px;
   height: 100%;
@@ -94,7 +94,8 @@ $transition: 0.25s ease;
   align-items: center;
   gap: 40px;
   flex: 1;
-  min-width: 0; /* Важно для правильной работы ellipsis */
+  min-width: 0;
+  /* Важно для правильной работы ellipsis */
 }
 
 .logo {
@@ -126,6 +127,163 @@ $transition: 0.25s ease;
     display: flex;
     align-items: center;
     gap: 32px;
+
+    li:nth-child(7) {
+      position: relative;
+      display: none;
+      /* Скрываем по умолчанию, будет показано при hover */
+    }
+
+    @media (max-width:1600px) {
+      
+            li:nth-child(7) {
+              display: block;
+            }
+      li:nth-child(6) {
+        display: none;
+      }
+
+    }
+
+    @media (max-width: 1550px) {
+      li:nth-child(5) {
+        display: none;
+      }
+
+    }
+
+    @media (max-width: 1352px) {
+      li:nth-child(4) {
+        display: none;
+      }
+    }
+
+    @media (max-width: 1132px) {
+      li:nth-child(3) {
+        display: none;
+      }
+    }
+
+    @media (max-width: 914px) {
+      li:nth-child(2) {
+        display: none;
+      }
+
+    }
+
+    @media (max-width: 768px) {
+      li {
+        display: flex !important;
+
+        &:nth-child(7) {
+          display: none !important;
+        }
+      }
+
+    }
+
+    li:nth-child(7) {
+      position: relative;
+
+      .mini-modal {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: -40%;
+        transform: translateX(-40%);
+        width: 220px;
+        // padding: 16px;
+        background-color: #fff;
+        border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        z-index: 1001;
+        animation: fadeIn2 0.55s ease-in-out;
+        padding: 14px 0;
+
+        ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          width: 100%;
+        }
+
+        li {
+          width: 70%;
+          text-align: center;
+          display: none;
+
+          a {
+            display: block;
+            font-size: 15px;
+            font-weight: 500;
+            color: #333;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: all 0.25s ease;
+            cursor: pointer;
+
+            &:hover {
+              background-color: rgba($yellow, 0.1);
+              color: $yellow;
+              transform: translateX(4px);
+            }
+          }
+
+          @media (max-width: 1600px) {
+            &:nth-child(6) {
+              display: block;
+            }
+          }
+
+          @media (max-width: 1550px) {
+            &:nth-child(5) {
+              display: block;
+            }
+          }
+
+          @media (max-width: 1350px) {
+            &:nth-child(4) {
+              display: block;
+            }
+          }
+
+          @media (max-width: 1130px) {
+            &:nth-child(3) {
+              display: block;
+            }
+          }
+
+          @media (max-width: 915px) {
+            &:nth-child(2) {
+              display: block;
+            }
+
+          }
+        }
+      }
+    }
+
+
+    // Анимация появления
+    @keyframes fadeIn2 {
+      from {
+        opacity: 0;
+        transform: translateY(-10px) translateX(-40%);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) translateX(-40%);
+      }
+    }
+
+
+
   }
 
   .nav-link {
@@ -159,6 +317,11 @@ $transition: 0.25s ease;
 .services-dropdown {
   position: relative;
 
+  @media (max-width: 768px) {
+    flex-direction: column;
+    
+  }
+
   .dropdown-icon {
     width: 16px;
     height: 16px;
@@ -172,10 +335,10 @@ $transition: 0.25s ease;
 }
 
 .dropdown-menu {
-min-width: 360px;
-display: flex;
-flex-direction: column;
-height: 250px;
+  min-width: 360px;
+  display: flex;
+  flex-direction: column;
+  height: 250px;
   position: absolute;
   top: calc(100% + 10px);
   left: 50%;
@@ -188,16 +351,39 @@ height: 250px;
   transition: opacity $transition, visibility $transition, transform $transition;
   z-index: 999;
   text-align: left;
+  .menu-li{
+    display: block !important;
+    
+  }
+  @media (max-width: 768px) {
+    position: static;
+    width: 100%;
+    transform: translateX(0);
+    margin-left: 0;
+    
+  }
 
   .services-dropdown.open & {
     opacity: 1;
     visibility: visible;
     transform: translateX(-50%) translateY(0);
+    @media (max-width: 768px) {
+      position: static;
+      width: 100%;
+      margin: 0;
+      transform: translateX(0);
+      
+    }
   }
 
   li {
     margin: 0;
     padding: 0;
+
+    &:nth-child(6),
+    &:nth-child(5) {
+      display: none;
+    }
   }
 
   a {
@@ -219,7 +405,7 @@ height: 250px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-   
+
   }
 }
 
@@ -229,6 +415,7 @@ height: 250px;
   align-items: center;
   gap: 32px;
   flex-shrink: 0;
+  margin-left: auto;
 }
 
 .social-icons {
@@ -299,7 +486,7 @@ height: 250px;
   padding: 8px;
   z-index: 1100;
   position: relative;
-  
+
   svg {
     color: $dark;
     transition: color $transition;
@@ -468,7 +655,7 @@ height: 250px;
 
     li {
       border-bottom: 1px solid #eee;
-      
+
       &:last-child {
         border-bottom: none;
       }
@@ -477,7 +664,7 @@ height: 250px;
     .nav-link {
       padding: 16px 0;
       font-size: 18px;
-      justify-content: space-between;
+      justify-content:flex-start;
     }
 
     .nav-text {
@@ -498,11 +685,22 @@ height: 250px;
       padding: 0;
       margin-left: 20px;
       background: #f8f9fa;
-      
+      li{
+        display: block;
+        width: 100%;
+        text-align: left;
+        padding: 12px 16px;
+        border-bottom: 1px solid #eee;
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+
       a {
         padding: 12px 16px;
         font-size: 16px;
-        
+
         &:hover {
           background: rgba($yellow, 0.15);
         }
