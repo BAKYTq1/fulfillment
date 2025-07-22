@@ -8,6 +8,11 @@ function Home() {
   return (
     <div>
       <Banner/>
+import FulfilmentСenter from '../../components/FulfilmentСenter/FulfilmentСenter'
+function Home() {
+  return (
+    <div>
+<FulfilmentСenter/>
       <BuyCall/>
       <Services/>
       <Insurance/>
