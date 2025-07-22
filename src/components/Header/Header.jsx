@@ -1,46 +1,41 @@
-
-import React, { useState, useEffect } from "react";
-import { Menu, X, ChevronDown, MessageCircle, Phone } from "lucide-react";
+import React, { useState, useEffect, useCallback } from "react";
+import { Menu, X, ChevronDown, MessageCircle, Phone, Ellipsis } from "lucide-react";
 import "./Header.scss";
 import tg from '../../assets/svg/tg.svg';
 import ws from '../../assets/svg/ws.svg';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMiniModalOpen, setIsMiniModalOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
+  // Обработка изменения ширины экрана
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-      if (window.innerWidth > 768) {
-        setIsMenuOpen(false);
-      }
+      const mobile = window.innerWidth <= 768;
+      setIsMobile(mobile);
+      if (!mobile) setIsMenuOpen(false);
     };
 
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+  const toggleMenu = () => setIsMenuOpen(prev => !prev);
+
+  // Services dropdown toggle
+  const toggleServices = useCallback(() => {
+    if (isMobile) setIsServicesOpen(prev => !prev);
+  }, [isMobile]);
+
+  const handleServicesHover = (open) => {
+    if (!isMobile) setIsServicesOpen(open);
   };
 
-  const toggleServicesDropdown = () => {
-    setIsServicesDropdownOpen(!isServicesDropdownOpen);
-  };
-
-  const handleServicesMouseEnter = () => {
-    if (!isMobile) {
-      setIsServicesDropdownOpen(true);
-    }
-  };
-
-  const handleServicesMouseLeave = () => {
-    if (!isMobile) {
-      setIsServicesDropdownOpen(false);
-    }
+  // Mini modal toggle
+  const toggleMiniModal = () => {
+    setIsMiniModalOpen(prev => !prev);
   };
 
   return (
@@ -50,7 +45,7 @@ const Header = () => {
           <div className="logo">
             <div className="logo-placeholder">FF</div>
           </div>
-          
+
           <nav className={`main-nav ${isMenuOpen ? "active" : ""}`}>
             <ul>
               <li>
@@ -58,46 +53,67 @@ const Header = () => {
                   <span className="nav-text">Фулфилмент центр Оборудование</span>
                 </a>
               </li>
-              
-              <li 
-                className={`services-dropdown ${isServicesDropdownOpen ? "open" : ""}`}
-                onMouseEnter={handleServicesMouseEnter}
-                onMouseLeave={handleServicesMouseLeave}
+
+              <li
+                className={`services-dropdown ${isServicesOpen ? "open" : ""}`}
+                onMouseEnter={() => handleServicesHover(true)}
+                onMouseLeave={() => handleServicesHover(false)}
               >
-                <a 
-                  href="#" 
+                <a
+                  href="#"
                   className="nav-link services-link"
-                  onClick={isMobile ? toggleServicesDropdown : undefined}
+                  onClick={toggleServices}
                 >
                   <span className="nav-text">Услуги Контакты</span>
                   <ChevronDown className="dropdown-icon" />
                 </a>
-                {isServicesDropdownOpen && (
+
+                {isServicesOpen && (
                   <ul className="dropdown-menu">
-                    <li><a href="#"><span className="dropdown-text">Приёмка товаров</span></a></li>
-                    <li><a href="#"><span className="dropdown-text">Обработка товаров</span></a></li>
-                    <li><a href="#"><span className="dropdown-text">Инвентаризация и хранение товаров</span></a></li>
-                    <li><a href="#"><span className="dropdown-text">Фотостудия для маркетплейсов</span></a></li>
-                    <li><a href="#"><span className="dropdown-text">Торговый ассистент</span></a></li>
+                    <li className="menu-li"><a href="#"><span className="dropdown-text">Приёмка товаров</span></a></li>
+                    <li className="menu-li"><a href="#"><span className="dropdown-text">Обработка товаров</span></a></li>
+                    <li className="menu-li"><a href="#"><span className="dropdown-text">Инвентаризация и хранение товаров</span></a></li>
+                    <li className="menu-li"><a href="#"><span className="dropdown-text">Фотостудия для маркетплейсов</span></a></li>
+                    <li className="menu-li"><a href="#"><span className="dropdown-text">Торговый ассистент</span></a></li>
                   </ul>
                 )}
               </li>
-              
+
               <li>
-                <a href="#" className="nav-link">
-                  <span className="nav-text">Личный кабинет</span>
-                </a>
+                <a href="#" className="nav-link"><span className="nav-text">Личный кабинет</span></a>
               </li>
               <li>
-                <a href="#" className="nav-link">
-                  <span className="nav-text">Страхование</span>
-                </a>
+                <a href="#" className="nav-link"><span className="nav-text">Страхование</span></a>
               </li>
-           
-            
+              <li>
+                <a href="#" className="nav-link"><span className="nav-text">Оборудование</span></a>
+              </li>
+              <li>
+                <a href="#" className="nav-link"><span className="nav-text">Контакты</span></a>
+              </li>
+
+              <li
+                onClick={toggleMiniModal}
+                onMouseEnter={() => !isMobile && setIsMiniModalOpen(true)}
+                onMouseLeave={() => !isMobile && setIsMiniModalOpen(false)}
+              >
+                <span className="nav-link"><Ellipsis /></span>
+                {isMiniModalOpen && (
+                  <div className="mini-modal">
+                    <ul>
+                      <li><a href="#">Услуги</a></li>
+                      <li><a href="#">Контакты</a></li>
+                      <li><a href="#">Личный кабинет</a></li>
+                      <li><a href="#">Страхование</a></li>
+                      <li><a href="#">Оборудование</a></li>
+                      <li><a href="#">Контакты</a></li>
+                    </ul>
+                  </div>
+                )}
+              </li>
             </ul>
 
-            {/* Mobile social icons and buttons */}
+            {/* Mobile actions */}
             <div className="mobile-actions">
               <div className="social-icons">
                 <MessageCircle className="social-icon" />
@@ -111,10 +127,11 @@ const Header = () => {
           </nav>
         </div>
 
+        {/* Right side */}
         <div className="header-right desktop-only">
           <div className="social-icons">
-           <img src={tg} alt="" />
-           <img src={ws} alt="" />
+            <img src={tg} alt="Telegram" />
+            <img src={ws} alt="WhatsApp" />
           </div>
           <div className="auth-buttons">
             <button className="register-btn">Регистрация</button>
@@ -122,8 +139,8 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Burger menu button */}
-        <button 
+        {/* Burger */}
+        <button
           className={`burger ${isMenuOpen ? "open" : ""}`}
           onClick={toggleMenu}
           aria-label="Toggle menu"
