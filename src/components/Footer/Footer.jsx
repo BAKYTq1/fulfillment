@@ -6,7 +6,7 @@ import logofoot from "../../assets/svg/logoFoot.svg";
 function Footer() {
   return (
     <footer className="footer">
-      <div className="footer-container">
+      <div className="footer-container container">
         <div className="footer-content">
           <div className="footer-left">
             <img src={logofoot} alt="Logo" />
