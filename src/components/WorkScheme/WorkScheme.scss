@@ -1,0 +1,181 @@
+.work-scheme-container {
+  font-family: Arial, sans-serif;
+  padding: 40px 20px;
+  text-align: center;
+  width: 1180px;
+  margin: auto;
+}
+
+.work-scheme-header {
+  margin-top: 100px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  .line {
+    width: 10px;
+    height: 40px;
+    background-color: #ffdb00;
+    border-radius: 4px;
+  }
+  h1 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #020C1E;
+  }
+}
+.work-scheme-tabs {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  gap: 40px;
+  border-bottom: 1px solid #eee; 
+}
+
+.tab-button {
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  font-weight: 500;
+  color: #999; // пассив вкладка - боз
+  padding: 12px 0;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.tab-button:hover {
+  color: #000;
+}
+
+.tab-button.active {
+  color: #000; // актив вкладка - кара
+  font-weight: 600;
+}
+
+.tab-button.active::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #000; // астындагы кара сызык
+}
+
+
+.work-scheme-steps {
+  position: relative; // <-- Жебелер абсолютно жайгашкандыктан
+  display: flex;
+  align-items: center;
+  background-color: #020c1e;
+  gap: 20px;
+  height: 370px;
+  border-radius: 20px;
+  padding: 0 40px;
+}
+
+.step-item {
+  position: relative;
+  background-color: #c7dafb;
+  border-radius: 10px;
+  padding: 25px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 225px;
+  height: 180px;
+  justify-content: space-between;
+  transition: transform 0.3s ease;
+  z-index: 2;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(255, 255, 0, 0.6);
+  }
+}
+
+.step-text {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+}
+
+.arrow-connector {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #020c1e;
+  font-size: 42px;
+  color: #ffdb00;
+  z-index: 5;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+// 2
+.img{
+  width: 108px;
+  height: 180px;
+}
+
+.work-scheme-steps.column-layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 670px;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.step-item1 {
+  position: relative;
+  background-color: #c7dafb;
+  border-radius: 10px;
+  padding: 25px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 390px;
+  gap: 5px;
+  height: 150px;
+  justify-content: space-between;
+  transition: transform 0.3s ease;
+  z-index: 2;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(255, 255, 0, 0.6);
+  }
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+}
+
+.down-arrow {
+  position: absolute;
+  transform: translateX(-50%);
+  font-size: 43px;
+  color: #ffdb00;
+  background-color: #020c1e;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+}
