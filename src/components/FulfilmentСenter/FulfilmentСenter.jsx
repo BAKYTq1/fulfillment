@@ -7,7 +7,7 @@ import Thermometer from "../../assets/svg/thermometer.svg";
 import personal from "../../assets/svg/personalФccount.svg";
 function FulfilmentСenter() {
   return (
-    <section>
+    <section className="section-top-container">
       <div className="section-top">
         <div className="section-text">
           <div></div>

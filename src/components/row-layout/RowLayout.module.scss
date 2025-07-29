@@ -1,0 +1,147 @@
+.rowLayout {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: #020c1e;
+    padding: 40px;
+    border-radius: 20px;
+    gap: 20px;
+    position: relative;
+    margin: 0 auto;
+
+}
+
+.stepItem {
+    background-color: #c7dafb;
+    border-radius: 12px;
+    padding: 24px 16px;
+    position: relative;
+    text-align: center;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    place-items: center;
+    gap: 12px;
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 4px 10px rgba(255, 255, 0, 0.5);
+    }
+
+    &:nth-child(1) {
+        .arrowConnector {
+            right: -22px;
+        }
+    }
+
+    &:nth-child(2) {
+        .arrowConnector {
+            right: -20px;
+        }
+    }
+
+    &:nth-child(3) {
+        .arrowConnector {
+            right: -20px;
+        }
+    }
+}
+
+.img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.stepText {
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+}
+
+.arrowConnector {
+    position: absolute;
+    // right: -16px;
+    // top: 50%;
+    // transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: #000;
+    color: #ffdb00;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    // left: 50%;
+}
+
+.stepItem:last-child .arrowConnector {
+    display: none;
+}
+
+/* Адаптив */
+@media (max-width: 992px) {
+    .img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .stepText {
+        font-size: 15px;
+    }
+
+    .arrowConnector {
+        width: 57px;
+        height: 54px;
+        font-size: 36px;
+
+    }
+}
+
+@media (max-width: 768px) {
+    .rowLayout {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    .stepItem:nth-child(2) .arrowConnector {
+        right: 50%;
+        left: auto;
+        transform: translateX(50%) rotate(90deg);
+        top: 90%;
+    }
+
+    .stepItem:nth-child(3) .arrowConnector {
+        right: 0%;
+        left: auto;
+        transform: translateX(50%) rotate(180deg);
+        // top: 90%;
+    }
+
+
+    // .stepItem:nth-child(2n+1):not(:last-child) .arrowConnector {
+    //     right: -12px;
+    // }
+
+}
+
+@media (max-width: 576px) {
+    .rowLayout {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .arrowConnector {
+        right: 50% !important;
+        left: auto;
+        transform: translateX(50%) rotate(90deg) !important;
+        top: 90%;
+    }
+
+    .stepItem {
+        width: 95%;
+    }
+}

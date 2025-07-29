@@ -1,6 +1,17 @@
-.section-top {
-  width: 1160px;
+.section-top-container {
+  width: 90%;
   margin: 0 auto;
+}
+.section-top {
+  width: 80%;
+  max-width: 1160px;
+  margin: 0 auto 50px;
+  height: auto;
+
+  @media (max-width: 720px) {
+    // width: 90%;
+    
+  }
 
   .section-text {
     margin-top: 10%;
@@ -20,6 +31,7 @@
     }
   }
   .cards {
+    width: 110%;
     padding-top: 30px;
     margin-top: 60px;
     height: 429px;
@@ -28,6 +40,19 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    margin: 0 auto;
+    gap: 40px;
+    // padding: 40px;
+    padding-bottom: 100px;
+
+
+    @media (max-width: 1479px) {
+      height: auto;
+      gap: 20px;
+      padding-bottom: 20px;
+      
+    }
+ 
 
     .card {
       width: 260px;
@@ -105,4 +130,55 @@
       }
     }
   }
-  
+  @media (max-width: 1124px) {
+  .section-top {
+    .cards {
+      width: 100%; // fix: убираем скролл за счёт ширины
+      padding-left: 10px;
+      padding-right: 10px;
+      box-sizing: border-box; // важно при отступах
+    }
+  }
+}
+@media (max-width: 1024px) {
+  .section-top {
+    width: 100%;
+    padding: 0 10px;
+
+    .cards {
+      width: 100%; // добавлено
+      gap: 20px;
+      justify-content: center;
+
+      .card {
+        width: 45%;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .section-top {
+    .cards {
+      width: 100%; // добавлено
+      padding-left: 0;
+      padding-right: 0;
+      box-sizing: border-box;
+
+      .card {
+        width: 90%;
+      }
+    }
+
+    .section-text {
+      flex-direction: column;
+      align-items: flex-start;
+
+      h1 {
+        font-size: 28px;
+        line-height: 36px;
+      }
+    }
+  }
+}
