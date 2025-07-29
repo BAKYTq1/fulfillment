@@ -1,0 +1,25 @@
+@import '../../styles/index.scss';
+.section1{
+    height: 350px;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    margin-top: 100px;
+    width: 100%;
+    max-width: 100%;
+    background-size: cover;
+    background-position: center;
+    .section1-item{
+       padding-top: 150px;
+    }
+    @media (max-width:$breakpoint-sm) {
+         .section1-item{
+       padding-top: 10px;
+       h1{
+        margin-top: 43px;
+        font-size: 40px !important;
+       }
+    }
+    margin-top: 60px;
+        height: 430px;
+    }
+}

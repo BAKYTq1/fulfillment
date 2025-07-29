@@ -1,0 +1,35 @@
+.service-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  margin-top: 80px !important;
+  border-radius: 20px;
+}
+
+.service-card {
+  background-color: #e6f0fd;
+  border-radius: 15px;
+  padding: 40px 60px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+ height: auto; 
+  h3 {
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #1E1E1E;
+  }
+
+  p {
+ font-weight: 500;
+    font-size: 17px;
+    color: #333;
+    line-height: 24px;
+  }
+
+}
+.service-card:nth-child(1) { height: 210px; }
+.service-card:nth-child(2) { height: 380px;}
+.service-card:nth-child(3) { height: 190px; margin-top: -160px; }
+.service-card:nth-child(4) { height: 257px; }
+.service-card:nth-child(5) { height: 229px; margin-top: -225px; }
