@@ -25,6 +25,7 @@ gap: 30px;
     border-radius: 20px;
     overflow: hidden;
     position: relative;
+    margin: 0 auto;
     @media (max-width: 1140px) {
         width: 300px;
     }
@@ -33,6 +34,11 @@ gap: 30px;
  }
      @media (max-width: $breakpoint-md) {
         width: 100%;
+     }
+     @media (max-width: 360px) {
+        width: 90%;
+
+        
      }
     p{
         position: absolute;

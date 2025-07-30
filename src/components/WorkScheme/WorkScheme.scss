@@ -1,0 +1,135 @@
+
+
+.work-scheme-container {
+  font-family: Arial, sans-serif;
+  padding: 40px 20px;
+  text-align: center;
+  width: 90%;
+  max-width: 1180px;
+  margin: 65px auto;
+  @media (max-width: 360px) {
+    width: 80%;
+  }
+}
+
+.work-scheme-header {
+  margin-top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.work-scheme-header .line {
+  width: 10px;
+  height: 40px;
+  background-color: #ffdb00;
+  border-radius: 4px;
+}
+
+.work-scheme-header h1 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: #020C1E;
+}
+
+.work-scheme-tabs {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  gap: 40px;
+  border-bottom: 1px solid #eee;
+  flex-wrap: wrap;
+}
+
+.tab-button {
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  font-weight: 500;
+  color: #999;
+  padding: 12px 0;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #000;
+  }
+
+  &.active {
+    color: #000;
+    font-weight: 600;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: #000;
+    }
+  }
+}
+
+.step-item, .step-item1 {
+  position: relative;
+  background-color: #c7dafb;
+  border-radius: 10px;
+  padding: 25px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  transition: transform 0.3s ease;
+  z-index: 2;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(255, 255, 0, 0.6);
+  }
+}
+
+.step-text {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+}
+
+.arrow-connector,
+.down-arrow {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #020c1e;
+  font-size: 42px;
+  color: #ffdb00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.arrow-connector {
+  right: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.down-arrow {
+  left: 50%;
+  top: calc(50% - 110px);
+  transform: translateX(-50%) rotate(90deg);
+}
+
+.img {
+  width: 108px;
+  height: 180px;
+}

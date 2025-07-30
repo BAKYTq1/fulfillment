@@ -1,0 +1,145 @@
+
+$yellow: #ffd800;
+$blue-gradient-start: #1e60d8;
+$blue-gradient-end: #4a90e2;
+$white: #ffffff;
+$radius: 30px;
+$transition: 0.3s ease;
+
+.footer {
+  margin: 80px auto 40px;
+  max-width: 1400px;
+  padding: 0 40px;
+}
+
+.footer-container {
+  background: linear-gradient(135deg, $blue-gradient-start 0%, $blue-gradient-end 100%);
+  border-radius: $radius;
+  padding: 60px 80px;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    pointer-events: none;
+  }
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-logo img {
+  width: 100px;
+}
+
+.footer-center {
+  flex: 1;
+margin-left: 40px;
+margin-bottom: 50px;
+}
+
+.footer-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 60px;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav a {
+  font-size: 18px;
+  font-weight: 600;
+  color: $white;
+  text-decoration: none;
+  position: relative;
+  padding: 8px 0;
+  transition: all $transition;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: $yellow;
+    transition: width $transition;
+  }
+
+  &:hover {
+    color: $yellow;
+
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba($white, 0.2);
+  padding-top: 30px;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.copyright {
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba($white, 0.8);
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+@media (max-width: 1023px) {
+  .footer {
+    padding: 0 30px;
+    margin: 60px auto 30px;
+  }
+
+  .footer-container {
+    padding: 50px 40px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .footer-nav ul {
+    gap: 40px;
+    margin-right: 40px;
+    
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    padding: 30px 20px;
+  }
+
+  .footer-nav ul {
+    gap: 20px;
+  }
+
+  .footer-nav a {
+    font-size: 16px;
+  }
+
+  .copyright {
+    font-size: 14px;
+  }
+}
