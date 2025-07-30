@@ -3,13 +3,14 @@ import { Menu, X, ChevronDown, MessageCircle, Phone, Ellipsis } from "lucide-rea
 import "./Header.scss";
 import tg from '../../assets/svg/tg.svg';
 import ws from '../../assets/svg/ws.svg';
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMiniModalOpen, setIsMiniModalOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-
+  const navigate = useNavigate()
   // Обработка изменения ширины экрана
   useEffect(() => {
     const handleResize = () => {
@@ -70,6 +71,8 @@ const Header = () => {
 
                 {isServicesOpen && (
                   <ul className="dropdown-menu">
+                    <li onClick={() => navigate('/Приёмка-товаров')} className="menu-li"><a href="#"><span className="dropdown-text">Приёмка товаров</span></a></li>
+                    <li onClick={() => navigate('/Обработка-товаров')} className="menu-li"><a href="#"><span className="dropdown-text">Обработка товаров</span></a></li>
                     <li className="menu-li"><a href="#"><span className="dropdown-text">Приёмка товаров</span></a></li>
                     <li className="menu-li"><a href="#"><span className="dropdown-text">Обработка товаров</span></a></li>
                     <li className="menu-li"><a href="#"><span className="dropdown-text">Инвентаризация и хранение товаров</span></a></li>

@@ -5,14 +5,12 @@ import car from "../../assets/svg/car.svg";
 import kubik from "../../assets/svg/kubik.svg";
 import Thermometer from "../../assets/svg/thermometer.svg";
 import personal from "../../assets/svg/personalФccount.svg";
+import H1 from "../../ui/h1";
 function FulfilmentСenter() {
   return (
     <section>
       <div className="section-top">
-        <div className="section-text">
-          <div></div>
-          <h1>Фулфилмент центр</h1>
-        </div>
+          <H1 h1={'Фулфилмент центр'}/>
         <div className="cards">
           <div className="card">
             <h1>4 600 м2</h1>
