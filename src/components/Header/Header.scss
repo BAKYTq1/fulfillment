@@ -19,6 +19,7 @@ $transition: 0.25s ease;
   z-index: 1000;
   font-family: "Montserrat", Arial, sans-serif;
   transition: background-color $transition, box-shadow $transition;
+  width: 100%;
 
   &.scrolled {
     background: rgba(10, 10, 10, 0.98);

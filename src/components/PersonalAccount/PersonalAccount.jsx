@@ -24,7 +24,7 @@ export function PersonalAccount() {
   useEffect(() => {
     carouselIntervalRef.current = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % carouselImages.length);
-    }, 3000);
+    }, 10000);
 
     return () => clearInterval(carouselIntervalRef.current);
   }, [carouselImages.length]);

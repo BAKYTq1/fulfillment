@@ -16,20 +16,24 @@ $button-dark-bg: #374151;
 }
 
 .personal-account-section {
-  width: 100%;
-  height: 1464px;
+  width: 90%;
+  height: 1404px;
   background-color: $background-gray;
   border-radius: 30px;
-  margin: auto;
+  margin:0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 
   .personal {
-    padding: 8% 15%;
+    // padding: 8% 15%;
     display: flex;
     flex-direction: column;
     gap: 64px;
+    width: 100%;
+    max-width: 1200px;
+    position: relative;
 
     .personal-hero {
       display: flex;
@@ -72,7 +76,8 @@ $button-dark-bg: #374151;
       }
 
       h2 {
-        width: 603px;
+        width: 100%;
+        max-width: 603px;
         font-weight: 600;
         font-size: 24px;
         line-height: 29px;
@@ -82,7 +87,8 @@ $button-dark-bg: #374151;
 
     .personal-nav {
       margin-top: 30px;
-      width: 1040px;
+      width: 100%;
+      max-width: 1040px;
       height: 180px;
       border: 1px solid $text-dark;
       border-radius: 20px;
@@ -92,6 +98,18 @@ $button-dark-bg: #374151;
       gap: 20px;
       margin-left: auto;
       margin-right: auto;
+
+      @media (max-width: 1124px) {
+      width: 81%;
+      }
+      @media (max-width: 768px) {
+        // width: 100%;
+        height: auto;
+      }
+      @media (max-width: 480px) {
+        padding: 20px;
+        
+      }
 
       h3 {
         margin: 0;
@@ -107,6 +125,11 @@ $button-dark-bg: #374151;
         list-style: none;
         padding: 0;
         margin: 0;
+        @media (max-width: 500px) {
+          grid-template-columns: 1fr;
+          gap: 10px;
+          
+        }
       }
 
       li {
@@ -131,8 +154,9 @@ $button-dark-bg: #374151;
 
     .personal-carousel-wrapper {
       position: relative;
-      width: 841px;
-      height: 473px;
+      width: 100%;
+      max-width: 841px;
+      height: 451px;
       margin: 0 auto;
       @include flex-center;
       overflow: hidden;
@@ -149,7 +173,7 @@ $button-dark-bg: #374151;
 
       .personal-carousel__screen-content {
         position: absolute;
-        width: 75.5%;
+        width: 66%;
         height: 55%;
         top: 13%;
         left: 50%;
@@ -158,6 +182,13 @@ $button-dark-bg: #374151;
         z-index: 2;
         display: flex;
         border-radius: 8px;
+        @media (max-width: 768px) {
+          width: 72%;
+          height: 66%;
+          top: 15%;
+          left: 50%;
+          transform: translateX(-50%);
+        }
       }
 
       .personal-carousel__track {
@@ -176,9 +207,15 @@ $button-dark-bg: #374151;
       }
 
       .personal-carousel__image {
-        width: 92%;
+        width: 100%;
         height: 100%;
         object-fit: cover !important;
+
+        @media (max-width: 768px) {
+          width: 100%;
+          height: auto;
+          
+        }
       }
 
       .personal-carousel__arrow {
@@ -209,13 +246,35 @@ $button-dark-bg: #374151;
         &--right {
           right: 100px;
         }
+        @media (max-width: 768px) {
+          &--left {
+            left: 20px;
+          }
+
+          &--right {
+            right: 20px;
+          }
+        }
+        @media (max-width: 480px) {
+          width: 36px;
+          height: 36px;
+          &--left {
+            left: 10px;
+          }
+
+          &--right {
+            right: 10px;
+          }
+          
+        }
       }
     }
 
     .personal-account__bottom-cta-card {
       background-color: #474b53;
       padding-top: 7rem;
-      width: 1160px;
+      width: 100%;
+      max-width: 1160px;
       height: 130px;
       border-radius: 20px;
       text-align: center;
@@ -224,6 +283,7 @@ $button-dark-bg: #374151;
       flex-direction: column;
       align-items: center;
       gap: 20px;
+      margin: 0 auto;
       
 
       .personal-account__bottom-cta-title {

@@ -8,7 +8,7 @@ import personal from "../../assets/svg/personalФccount.svg";
 import H1 from "../../ui/h1";
 function FulfilmentСenter() {
   return (
-    <section>
+    <section className="section-top-container">
       <div className="section-top">
           <H1 h1={'Фулфилмент центр'}/>
         <div className="cards">
