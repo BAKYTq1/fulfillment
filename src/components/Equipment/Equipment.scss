@@ -30,6 +30,10 @@ $shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
   flex-direction: column;
   align-items: center;
   gap: 64px;
+  margin-bottom: 200px;
+  @media (max-width: 310px) {
+    margin-bottom: 400px;
+  }
 }
 
 .equipment-container {
@@ -188,6 +192,10 @@ $shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
     display: flex;
     align-items: flex-start;
     gap: 10px;
+    @media (max-width: 730px) {
+      flex-direction: column;
+      
+    }
     // flex-wrap: wrap; // Алып салдым, анткени сиз комментарийлерди алып салууну сурадыңыз
 
     .p {
@@ -204,6 +212,35 @@ $shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
       margin: 0;
       padding: 0px 12px;
     }
+    .equipment__spec-grid-packaging, .equipment__spec-grid-packaging1{
+    
+      p{
+        @media (max-width: 430px) {
+          width: 77%;
+        }
+        @media (max-width: 400px) {
+          width: 70%;
+        }
+        @media (max-width: 360px) {
+          width: 60%;
+        }
+        @media (max-width: 330px) {
+          width: 50%;
+        }
+        @media (max-width: 300px) {
+          width: 40%;
+        }
+        @media (max-width: 270px) {
+          width: 30%;
+        }
+        @media (max-width: 240px) {
+          width: 20%;
+        }
+        @media (max-width: 210px) {
+          width: 10%;
+        }
+      }
+    }
   }
 }
 
@@ -214,6 +251,9 @@ $shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
   margin-right: auto;
   width: 100%;
   height: 392px;
+  @media (max-width: 900px) {
+    height: auto;
+  }
 
   .equipment__content {
     padding: 12px;
@@ -277,6 +317,10 @@ $shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
     &:last-child {
       border-bottom: none;
     }
+    // @media (max-width: 447px) {
+    //   grid-template-columns: 1fr 1fr;
+      
+    // }
   }
 
   .equipment__spec-label {

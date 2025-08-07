@@ -1,0 +1,513 @@
+.container {
+  min-height: 100vh;
+  background-color: white;
+}
+
+// Hero Section
+.hero {
+  position: relative;
+  height: 500px;
+  border-radius: 32px;
+  margin: 16px;
+  overflow: hidden;
+  transition: all 1000ms ease-out;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &.hidden {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom right, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9));
+}
+
+.heroContent {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding-left: 32px;
+  padding-right: 32px;
+
+  @media (min-width: 768px) {
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+}
+
+.heroText {
+  transition: all 1000ms ease-out;
+  transition-delay: 300ms;
+
+  &.visibleText {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  &.hiddenText {
+    transform: translateX(-48px);
+    opacity: 0;
+  }
+}
+
+.titleWrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.titleAccent {
+  width: 8px;
+  height: 64px;
+  background: linear-gradient(to bottom, #f59e0b, #f59e0b);
+  border-radius: 9999px;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 700;
+  color: white;
+
+  @media (min-width: 768px) {
+    font-size: 72px;
+  }
+}
+
+.floatingCircle1 {
+  position: absolute;
+  top: 25%;
+  right: 25%;
+  width: 128px;
+  height: 128px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 9999px;
+  filter: blur(20px);
+  animation: pulse 2s infinite;
+}
+
+.floatingCircle2 {
+  position: absolute;
+  bottom: 33%;
+  left: 25%;
+  width: 96px;
+  height: 96px;
+  background-color: rgba(245, 158, 11, 0.1);
+  border-radius: 9999px;
+  filter: blur(16px);
+  animation: pulse 2s infinite;
+  animation-delay: 500ms;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+// Contact Info Section
+.contactInfo {
+  margin: 32px 16px;
+  transition: all 1000ms ease-out;
+  transition-delay: 500ms;
+
+  &.visibleSection {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  &.hiddenSection {
+    transform: translateY(48px);
+    opacity: 0;
+  }
+}
+
+.contactCard {
+  background: linear-gradient(to bottom right, #eff6ff, #e0e7ff);
+  border-radius: 32px;
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+
+  @media (min-width: 768px) {
+    padding: 48px;
+  }
+}
+
+.contactBgCircle1 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 256px;
+  height: 256px;
+  background: linear-gradient(to bottom left, #dbeafe, transparent);
+  border-radius: 9999px;
+  transform: translateX(80px) translateY(-80px);
+}
+
+.contactBgCircle2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 192px;
+  height: 192px;
+  background: linear-gradient(to top right, #c7d2fe, transparent);
+  border-radius: 9999px;
+  transform: translateX(-64px) translateY(64px);
+}
+
+.contactGrid {
+  position: relative;
+  z-index: 10;
+  display: grid;
+  gap: 48px;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.questionsSection {
+  transition: all 800ms ease-out;
+  transition-delay: 700ms;
+
+  &.visibleContent {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  &.hiddenContentLeft {
+    transform: translateX(-32px);
+    opacity: 0;
+  }
+}
+
+.sectionTitle {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 24px;
+
+  @media (min-width: 768px) {
+    font-size: 36px;
+  }
+}
+
+.sectionSubtitle {
+  font-size: 18px;
+  color: #475569;
+  margin-bottom: 32px;
+  line-height: 1.75;
+}
+
+.contactMethods {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.contactMethod {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 16px;
+  backdrop-filter: blur(4px);
+  transition: all 500ms ease-out;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+.methodIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.phoneIcon {
+  background: linear-gradient(to bottom right, #f59e0b, #f59e0b);
+}
+
+.emailIcon {
+  background: linear-gradient(to bottom right, #3b82f6, #2563eb);
+}
+
+.addressIcon {
+  background: linear-gradient(to bottom right, #10b981, #059669);
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  color: white;
+}
+
+.methodLabel {
+  font-size: 14px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.methodValue {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+// Animation delays for contact methods
+.visibleMethod1 {
+  transform: translateX(0);
+  opacity: 1;
+  transition-delay: 1000ms;
+}
+
+.hiddenMethod1 {
+  transform: translateX(-16px);
+  opacity: 0;
+}
+
+.visibleMethod2 {
+  transform: translateX(0);
+  opacity: 1;
+  transition-delay: 1200ms;
+}
+
+.hiddenMethod2 {
+  transform: translateX(-16px);
+  opacity: 0;
+}
+
+.visibleMethod3 {
+  transform: translateX(0);
+  opacity: 1;
+  transition-delay: 1400ms;
+}
+
+.hiddenMethod3 {
+  transform: translateX(-16px);
+  opacity: 0;
+}
+
+// Chat Widget
+.chatWidget {
+  transition: all 800ms ease-out;
+  transition-delay: 900ms;
+
+  &.visibleChat {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+
+  &.hiddenChat {
+    transform: translateX(32px) scale(0.95);
+    opacity: 0;
+  }
+}
+
+.chatContainer {
+  background-color: white;
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 20px 25px -5px rgba(219, 234, 254, 0.5);
+  border: 1px solid rgba(219, 234, 254, 0.5);
+}
+
+.chatHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.chatAvatar {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(to bottom right, #f59e0b, #f97316);
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chatName {
+  font-weight: 700;
+  color: #1e293b;
+  font-size: 18px;
+}
+
+.chatRole {
+  font-size: 14px;
+  color: #64748b;
+}
+
+.chatMessage {
+  background: linear-gradient(to bottom right, #eff6ff, #e0e7ff);
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.messageText {
+  color: #334155;
+  line-height: 1.75;
+}
+
+.chatButton {
+  width: 100%;
+  background: linear-gradient(to right, #f59e0b, #f59e0b);
+  color: #1e293b;
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: 12px;
+  transition: all 300ms ease-out;
+  box-shadow: 0 20px 25px -5px rgba(253, 230, 138, 0.5);
+
+  &:hover {
+    background: linear-gradient(to right, #f59e0b, #f59e0b);
+    transform: scale(1.05);
+  }
+}
+
+// Contact Form Section
+.contactFormSection {
+  margin: 32px 16px;
+  transition: all 1000ms ease-out;
+  transition-delay: 1000ms;
+
+  &.visibleSection {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  &.hiddenSection {
+    transform: translateY(48px);
+    opacity: 0;
+  }
+}
+
+.formContainer {
+  background-color: white;
+  border-radius: 32px;
+  padding: 32px;
+  box-shadow: 0 20px 25px -5px rgba(241, 245, 249, 0.5);
+  border: 1px solid rgba(241, 245, 249, 0.5);
+
+  @media (min-width: 768px) {
+    padding: 48px;
+  }
+}
+
+.formWrapper {
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.formTitle {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.formSubtitle {
+  color: #64748b;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.formGrid {
+  display: grid;
+  gap: 24px;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.formLabel {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #334155;
+  margin-bottom: 8px;
+}
+
+.formInput {
+  width: 90%;
+  padding: 12px 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  transition: all 300ms ease-out;
+
+  &:focus {
+    outline: none;
+    border-color: transparent;
+    box-shadow: 0 0 0 2px #f59e0b;
+  }
+
+  &.phoneInput {
+    width: 100%;
+  }
+//   &:last-child {
+//     width: 100%;
+//   }
+}
+
+.formTextarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  transition: all 300ms ease-out;
+  resize: none;
+
+  &:focus {
+    outline: none;
+    border-color: transparent;
+    box-shadow: 0 0 0 2px #f59e0b;
+  }
+}
+
+.submitButton {
+  width: 100%;
+  background: linear-gradient(to right, #f59e0b, #f59e0b);
+  color: #1e293b;
+  font-weight: 700;
+  padding: 16px 32px;
+  border-radius: 12px;
+  transition: all 300ms ease-out;
+  box-shadow: 0 20px 25px -5px rgba(253, 230, 138, 0.5);
+
+  &:hover {
+    background: linear-gradient(to right, #f59e0b, #f59e0b);
+    transform: scale(1.05);
+  }
+}

@@ -106,13 +106,13 @@ export function PersonalAccount() {
                 </div>
               ))}
             </div>
+          </div>
             <button className="personal-carousel__arrow personal-carousel__arrow--left" onClick={prevSlide}>
               &lt;
             </button>
             <button className="personal-carousel__arrow personal-carousel__arrow--right" onClick={nextSlide}>
               &gt;
             </button>
-          </div>
         </div>
 
         <div className="personal-account__bottom-cta-card">
