@@ -20,10 +20,6 @@ function Home() {
     <div>
       <Banner/>
 <FulfilmentСenter/>
-      <BuyCall/>
-      <Services/>
-      <Insurance/>
-      <FulfilmentСenter />
       <BuyCall />
       <Services />
       <Equipment />
