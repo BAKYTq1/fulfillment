@@ -3,9 +3,12 @@ import Layout from "../Layout/Layout";
 import Admin from "../Layout/admin";
 import Home from "../pages/Home/Home";
 import { Contact } from "../pages/contacts/Contact";
-import Section1 from "../components/Section1/Section1";
+// import Section1 from "../components/Section1/Section1";
 import Products from "../pages/products/Products";
 import GoodsProcessing from "../pages/GoodsProcessing/GoodsProcessing";
+import InventoryGoods from "../pages/InventoryGoods/InventoryGoods";
+import TradeAssistant from "../pages/TradeAssistant/TradeAssistant";
+import PhotoStudio from "../pages/PhotoStudio/PhotoStudio";
 
 export const myRouter = createBrowserRouter([
     {
@@ -17,13 +20,24 @@ export const myRouter = createBrowserRouter([
          element: <Home/>
         },
         {
-          
-         path: 'Приёмка-товаров',
+         path: 'goods-acceptance',
          element: <Products/>
         },
         {
-         path: 'Обработка-товаров',
+         path: 'goods-processing',
          element: <GoodsProcessing/>
+        },
+        {
+         path: 'storage-inventory',
+         element: <InventoryGoods/>
+        },
+        {
+         path: 'assistent',
+         element: <TradeAssistant/>
+        },
+        {
+         path: 'photo-studio',
+         element: <PhotoStudio/>
         },
         {
          path: 'Контакты',

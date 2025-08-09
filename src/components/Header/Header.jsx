@@ -74,13 +74,11 @@ const Header = () => {
 
                 {isServicesOpen && (
                   <ul className="dropdown-menu">
-                    <li onClick={() => navigate('/Приёмка-товаров')} className="menu-li"><a href="#"><span className="dropdown-text">Приёмка товаров</span></a></li>
-                    <li onClick={() => navigate('/Обработка-товаров')} className="menu-li"><a href="#"><span className="dropdown-text">Обработка товаров</span></a></li>
-                    <li className="menu-li"><a href="#"><span className="dropdown-text">Приёмка товаров</span></a></li>
-                    <li className="menu-li"><a href="#"><span className="dropdown-text">Обработка товаров</span></a></li>
-                    <li className="menu-li"><a href="#"><span className="dropdown-text">Инвентаризация и хранение товаров</span></a></li>
-                    <li className="menu-li"><a href="#"><span className="dropdown-text">Фотостудия для маркетплейсов</span></a></li>
-                    <li className="menu-li"><a href="#"><span className="dropdown-text">Торговый ассистент</span></a></li>
+                    <li onClick={() => navigate('/goods-acceptance')} className="menu-li"><a href="#"><span className="dropdown-text">Приёмка товаров</span></a></li>
+                    <li onClick={() => navigate('/goods-processing')} className="menu-li"><a href="#"><span className="dropdown-text">Обработка товаров</span></a></li>
+                    <li onClick={() => navigate('/storage-inventory')} className="menu-li"><a href="#"><span className="dropdown-text">Инвентаризация и хранение товаров</span></a></li>
+                    <li onClick={() => navigate('/photo-studio')} className="menu-li"><a href="#"><span className="dropdown-text">Фотостудия для маркетплейсов</span></a></li>
+                    <li onClick={() => navigate('/assistent')} className="menu-li"><a href="#"><span className="dropdown-text">Торговый ассистент</span></a></li>
                   </ul>
                 )}
               </li>
