@@ -4,12 +4,14 @@ import "./Header.scss";
 import tg from '../../assets/svg/tg.svg';
 import ws from '../../assets/svg/ws.svg';
 import { useNavigate } from "react-router-dom";
+import RegistrationModal from "../model/RegistrationModal";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMiniModalOpen, setIsMiniModalOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [model, setModel] = useState(false)
   const navigate = useNavigate()
   // Обработка изменения ширины экрана
   useEffect(() => {
@@ -40,6 +42,7 @@ const Header = () => {
   };
 
   return (
+    <>
     <header className="header">
       <div className="header-container">
         <div className="header-left">
@@ -137,7 +140,7 @@ const Header = () => {
             <img src={ws} alt="WhatsApp" />
           </div>
           <div className="auth-buttons">
-            <button className="register-btn">Регистрация</button>
+            <button onClick={()=>setModel(!model)} className="register-btn">Регистрация</button>
             <button className="login-btn">Личный кабинет</button>
           </div>
         </div>
@@ -152,6 +155,12 @@ const Header = () => {
         </button>
       </div>
     </header>
+    {
+      model && (
+        <RegistrationModal onClose={() => setModel(false)}/>
+      )
+    }
+    </>
   );
 };
 
