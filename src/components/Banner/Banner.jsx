@@ -32,12 +32,7 @@ function Banner() {
                     <h3>Полный спектр услуг для <br />
                         поставщиков на маркетплейсы
                     </h3>
-                    <H1
-                        h1={`Возьмём на себя рутинную работу по подготовке <br /> ваших товаров для поставки на маркетплейсы`}
-                        color="#fff"
-                        size="22px"
-                        items="left "
-                    />
+                    <h6>Возьмём на себя рутинную работу по подготовке <br /> ваших товаров для поставки на маркетплейсы</h6>
                 </div>
                 <img className='banner-container-content-img-2' src="https://fulfillment.kg/img/logo/image_3.png" alt="" />
             </div>

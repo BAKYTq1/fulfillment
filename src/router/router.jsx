@@ -38,7 +38,9 @@ export const myRouter = createBrowserRouter([
         {
          path: 'photo-studio',
          element: <PhotoStudio/>
-         path: 'Контакты',
+        },
+        {
+         path: 'Contact',
          element: <Contact/>
         },
         {

@@ -6,17 +6,14 @@ import icon3 from "../../assets/svg/icon3.svg";
 import icon4 from "../../assets/svg/icon4.svg";
 import RowLayout from "../row-layout/RowLayout";
 import ColumnLayout from "../row-layout/ColumnLayout";
+import H1 from "../../ui/h1";
 
 function WorkScheme() {
   const [activeTab, setActiveTab] = useState("start");
 
   return (
     <div className="work-scheme-container">
-      <div className="work-scheme-header">
-        <div className="line"></div>
-        <h1>Схема работы</h1>
-      </div>
-
+       <H1 h1={'Схема работы'} color={'black'}/>
       <div className="work-scheme-tabs">
         <button
           className={`tab-button ${activeTab === "start" ? "active" : ""}`}

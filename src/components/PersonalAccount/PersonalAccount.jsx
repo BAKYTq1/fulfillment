@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./PersonalAccount.scss";
 import raxs from '../../assets/img/raxs.png'
+import H1 from "../../ui/h1";
 
 const raxsLogoUrl = "https://static.tildacdn.one/tild3133-3164-4265-b731-306461663030/RAXS.png";
 
@@ -66,11 +67,10 @@ export function PersonalAccount() {
   };
 
   return (
-    <section className="personal-account-section">
+    <section className="personal-account-section" id="kabinet">
       <div className="personal">
-        <div className="personal-hero">
-          <div className="line"></div>
-          <h1>Личный кабинет</h1>
+        <div>
+        <H1 h1={'Личный кабинет'} />
         </div>
         <div className="personal-hero-text">
           <img src={raxs} alt="RAXS Logo" />

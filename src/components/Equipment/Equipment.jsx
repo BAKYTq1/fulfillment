@@ -1,20 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Equipment.scss";
 import Equipment0 from "../../assets/img/Equipment.png"; // 
 import Equipment1 from "../../assets/img/Equiment1.png"; // 
 import Equipment2 from "../../assets/svg/Equiment2.svg"; // 
+import H1 from "../../ui/h1";
 
 function Equipment() {
+
   return (
-    <section className="equipment-section">
+    <section className="equipment-section" id="oborudovanie">
       <div className="equipment-container">
         {" "}
-       
-        <div className="equipment__header">
-          <div className="equipment__accent-line"></div>
-          <h1 className="equipment__title">Оборудование</h1>
-        </div>
-   
+       <div>
+        <H1 h1={'Оборудование'} />   
+       </div>
         <div className="equipment__card equipment__card--large">
           <div className="equipment__content">
             <div className="equipment__image-wrapper">

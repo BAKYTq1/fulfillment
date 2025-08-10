@@ -47,18 +47,13 @@
     justify-content: space-evenly;
     margin: 0 auto;
     gap: 30px 10px;
-    // padding: 40px;
-    // padding-bottom: 100px;
 
 
     @media (max-width: 1479px) {
       height: auto;
       gap: 20px;
       padding-bottom: 20px;
-      
     }
- 
-
     .card {
       width: 260px;
       height: 176px;
@@ -79,7 +74,6 @@
       position: relative;
       margin-top: 18px;
       padding-left: 20px;
-      font-family: Inter;
       font-weight: 600;
       font-size: 18px;
       line-height: 22px;
@@ -148,7 +142,7 @@
 @media (max-width: 1024px) {
   .section-top {
     width: 100%;
-    padding: 0 10px;
+    padding: 0 0px;
 
     .cards {
       width: 100%; // добавлено

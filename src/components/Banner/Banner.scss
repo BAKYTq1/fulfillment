@@ -57,6 +57,19 @@
 
         &-text {
             margin-top: 20px;
+            h3{
+                line-height: 58px;
+                font-size: 48px;
+            }
+            h6{
+                border-left: 10px solid #ffdb00;
+                border-bottom-left-radius: 6px;
+                border-top-left-radius: 6px;
+                padding-left: 20px;
+                line-height: 26px;
+                font-size:22px;
+                font-weight: 200;
+            }
         }
     }
 
@@ -152,8 +165,6 @@
 
         &-content {
             width: 90%;
-            align-items: center;
-            text-align: center;
 
             &-img-2 {
                 right: -41px;
@@ -162,8 +173,12 @@
             }
 
             &-text h3 {
-                font-size: 18px;
+                font-size: 46px;
             }
+             h6{
+                font-size: 20px;
+                margin-bottom: 90px;
+             }
         }
     }
 
@@ -190,8 +205,11 @@
             }
 
             &-text h3 {
-                font-size: 16px;
-                line-height: 1.4;
+                font-size: 42px;
+                line-height: 1;
+            }
+            &-text h6 {
+                font-size: 18px;
             }
         }
     }
@@ -211,7 +229,11 @@
             }
 
             &-text h3 {
+                font-size: 28px;
+            }
+            &-text h6 {
                 font-size: 14px;
+                line-height: 15px;
             }
         }
     }

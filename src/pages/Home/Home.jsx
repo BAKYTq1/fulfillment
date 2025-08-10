@@ -15,17 +15,15 @@ import { PersonalAccount } from "../../components/PersonalAccount/PersonalAccoun
 
 function Home() {
   return (
-  
-    
     <div>
       <Banner/>
 <FulfilmentСenter/>
       <BuyCall />
       <Services />
-      <Equipment />
       <PersonalAccount/>
-      <WorkScheme />
       <Insurance />
+      <Equipment />
+      <WorkScheme />
     </div>
   );
 }
