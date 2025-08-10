@@ -3,7 +3,7 @@ import Layout from "../Layout/Layout";
 import Admin from "../Layout/admin";
 import Home from "../pages/Home/Home";
 import { Contact } from "../pages/contacts/Contact";
-import Section1 from "../components/Section1/Section1";
+// import Section1 from "../components/Section1/Section1";
 import Products from "../pages/products/Products";
 import GoodsProcessing from "../pages/GoodsProcessing/GoodsProcessing";
 import InventoryGoods from "../pages/InventoryGoods/InventoryGoods";
@@ -38,6 +38,8 @@ export const myRouter = createBrowserRouter([
         {
          path: 'photo-studio',
          element: <PhotoStudio/>
+        },
+        {
          path: 'Контакты',
          element: <Contact/>
         },

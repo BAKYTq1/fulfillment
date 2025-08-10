@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import styles from './Contact.module.scss';
 import Section1 from "../../components/Section1/Section1";
+import { FaTelegramPlane } from "react-icons/fa";
+import { RiWhatsappFill } from "react-icons/ri";
 
 export function Contact() {
   const [isVisible, setIsVisible] = useState(false);
@@ -60,7 +62,7 @@ export function Contact() {
                   </div>
                 </div>
 
-                <div>
+                <div className={styles.formGridBig}>
                   <label className={styles.formLabel}>
                     Телефон
                   </label>
@@ -71,7 +73,7 @@ export function Contact() {
                   />
                 </div>
 
-                <div>
+                <div className={styles.formGridBig}>
                   <label className={styles.formLabel}>
                     Сообщение
                   </label>
@@ -92,7 +94,7 @@ export function Contact() {
             </div>
 
             {/* Chat Widget */}
-            <div className={styles.contactMethods}>
+            {/* <div className={styles.contactMethods}>
               <div className={`${styles.contactMethod} ${isVisible ? styles.visibleMethod1 : styles.hiddenMethod1}`}>
                 <div className={`${styles.methodIcon} ${styles.phoneIcon}`}>
                   <svg className={styles.icon} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -128,6 +130,15 @@ export function Contact() {
                   <p className={styles.methodLabel}>Адрес</p>
                   <p className={styles.methodValue}>г. Бишкек, Кыргызстан</p>
                 </div>
+              </div>
+            </div> */}
+            <div className={styles.contactMethods}>
+              <h3>+996709996900</h3>
+              <h4>support@fulfillment.kg</h4>
+              <p>Кыргызстан, город Бишкек, Рынок Дордой,<br /> Кербен, 2-ряд, 76-контейнер</p>
+              <div>
+                <button><FaTelegramPlane /></button>
+                <button><RiWhatsappFill /></button>
               </div>
             </div>
 
