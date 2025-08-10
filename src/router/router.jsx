@@ -40,6 +40,7 @@ export const myRouter = createBrowserRouter([
          element: <PhotoStudio/>
         },
         {
+         path: 'Contact',
          path: 'Контакты',
          element: <Contact/>
         },

@@ -4,7 +4,7 @@ import img from '../../assets/insurance.png'
 import H1 from '../../ui/h1'
 function Insurance() {
   return (
-    <div className='container'>
+    <div className='container' id='strahovanie'>
        <H1 h1={'Страхование'}/>
        <div className='insurance'>
         <div>

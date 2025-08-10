@@ -23,7 +23,7 @@ $shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
 }
 
 .equipment-section {
-  min-height: 100vh;
+  margin-top: 100px;
   background-color: $background-gray;
   padding: 64px 16px;
   display: flex;
@@ -37,7 +37,7 @@ $shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
 }
 
 .equipment-container {
-  max-width: 1280px;
+  max-width: 1180px;
   width: 100%;
   margin: 0 auto;
   display: flex;

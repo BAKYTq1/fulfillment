@@ -1,0 +1,16 @@
+.foto{
+    margin-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+   img{
+    width: 300px;
+    margin: 0 auto;
+    flex: 1 1 150px;     
+    max-width: 100%;  
+    height: auto;         
+    cursor: zoom-in;
+    border-radius: 10px;
+   }
+}

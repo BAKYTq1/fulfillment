@@ -1,11 +1,13 @@
-import React from 'react'
+// Button.jsx
+import React from 'react';
+import './H1.scss';
 
-function Button() {
+function Button({ open, onClick }) {
   return (
-    <div>
-      <button>Наши работы</button>
-    </div>
-  )
+    <button onClick={onClick} className='btn-our-works'>
+      {open ? 'Скрыть' : 'Наши работы'}
+    </button>
+  );
 }
 
-export default Button
+export default Button;

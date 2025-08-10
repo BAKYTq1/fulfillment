@@ -3,6 +3,8 @@ import { Menu, X, ChevronDown, MessageCircle, Phone, Ellipsis } from "lucide-rea
 import "./Header.scss";
 import tg from '../../assets/svg/tg.svg';
 import ws from '../../assets/svg/ws.svg';
+import { Link, useNavigate } from "react-router-dom";
+import img from '../../assets/logo-ef.svg fill.svg'
 import { useNavigate } from "react-router-dom";
 import RegistrationModal from "../model/RegistrationModal";
 
@@ -47,14 +49,14 @@ const Header = () => {
       <div className="header-container">
         <div className="header-left">
           <div className="logo">
-            <div className="logo-placeholder">FF</div>
+           <Link to={'/'}><img src={img} alt="" /></Link>
           </div>
 
           <nav className={`main-nav ${isMenuOpen ? "active" : ""}`}>
             <ul>
               <li>
-                <a href="#" className="nav-link">
-                  <span className="nav-text">Фулфилмент центр Оборудование</span>
+                <a href="/#sklad" className="nav-link">
+                  <span className="nav-text">Фулфилмент центр</span>
                 </a>
               </li>
 
@@ -64,11 +66,11 @@ const Header = () => {
                 onMouseLeave={() => handleServicesHover(false)}
               >
                 <a
-                  href="#"
                   className="nav-link services-link"
                   onClick={toggleServices}
+                  style={{cursor: 'pointer'}}
                 >
-                  <span className="nav-text">Услуги Контакты</span>
+                  <span className="nav-text">Услуги</span>
                   <ChevronDown className="dropdown-icon" />
                 </a>
 
@@ -84,16 +86,16 @@ const Header = () => {
               </li>
 
               <li>
-                <a href="#" className="nav-link"><span className="nav-text">Личный кабинет</span></a>
+                <a href="/#kabinet" className="nav-link"><span className="nav-text">Личный кабинет</span></a>
               </li>
               <li>
-                <a href="#" className="nav-link"><span className="nav-text">Страхование</span></a>
+                <a href="/#strahovanie" className="nav-link"><span className="nav-text">Страхование</span></a>
               </li>
               <li>
-                <a href="#" className="nav-link"><span className="nav-text">Оборудование</span></a>
+                <a href="/#oborudovanie" className="nav-link"><span className="nav-text">Оборудование</span></a>
               </li>
               <li>
-                <a href="#" className="nav-link"><span className="nav-text">Контакты</span></a>
+                <Link to={"contact"} className="nav-link"><span className="nav-text">Контакты</span></Link>
               </li>
 
               <li
@@ -106,11 +108,10 @@ const Header = () => {
                   <div className="mini-modal">
                     <ul>
                       <li><a href="#">Услуги</a></li>
-                      <li><a href="#">Контакты</a></li>
-                      <li><a href="#">Личный кабинет</a></li>
-                      <li><a href="#">Страхование</a></li>
-                      <li><a href="#">Оборудование</a></li>
-                      <li><a href="#">Контакты</a></li>
+                      <li><a href="/#kabinet">Личный кабинет</a></li>
+                      <li><a href="/#strahovanie">Страхование</a></li>
+                      <li><a href="/#oborudovanie">Оборудование</a></li>
+                      <li><Link to={'contact'}>Контакты</Link></li>
                     </ul>
                   </div>
                 )}
