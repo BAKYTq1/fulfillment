@@ -135,7 +135,7 @@
 }
 
 .contactCard {
-  background: linear-gradient(to bottom right, #eff6ff, #e0e7ff);
+  background: #cfe2ff;
   border-radius: 32px;
   padding: 32px;
   position: relative;
@@ -441,15 +441,22 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+  width: 100%;
 }
 
 .formGrid {
   display: grid;
   gap: 24px;
+  width: 96%;
 
   @media (min-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+.formGridBig{
+  display: grid;
+  gap: 24px;
+  width: 92%;
 }
 
 .formLabel {
@@ -509,5 +516,59 @@
   &:hover {
     background: linear-gradient(to right, #f59e0b, #f59e0b);
     transform: scale(1.05);
+  }
+}
+.contactMethods {
+  background-color: #cfe2ff; // тот же голубой фон
+  padding: 20px;
+  border-radius: 8px;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 100px;
+
+  h3 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 30px;
+    margin-bottom: 8px;
+  }
+
+  h4 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    margin-top: 16px;
+  }
+
+  p {
+    font-size: 15px;
+    line-height: 1.4;
+    margin-bottom: 16px;
+  }
+
+  button {
+    background-color: #0b1621; // тёмный фон под иконки
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #222f3e; // эффект при наведении
+      transform: scale(1.1);
+    }
+
+    svg {
+      font-size: 16px;
+    }
   }
 }
